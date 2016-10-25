@@ -9,15 +9,27 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'rakr/vim-one'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-rails'
+Plug 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+let g:airline_powerline_fonts = 1
+
+:nmap <c-t> <plug>(ctrlp)
+:nmap <c-p> <plug>(ctrlp)
+:map [b :bp<cr>
+:map ]b :bn<cr>
+:nmap :BD :bn\|bd # <cr>
 
 set nocompatible
 set t_Co=256
 set background=dark
-"colorscheme Tomorrow-Night
 "colorscheme tender
-colorscheme deep-space
+"colorscheme deep-space
+colorscheme Tomorrow-Night
+
+set relativenumber
 
 set visualbell
 
@@ -38,8 +50,8 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd Filetype gitcommit match OverLength /\%51v.\+/
+autocmd Filetype gitcommit let &colorcolumn="50,70"
+set colorcolumn=80
 
 function ReplaceNERDTreeIfDirectory()
     if argc() == 1 && isdirectory(argv(0))
