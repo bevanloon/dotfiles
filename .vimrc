@@ -15,16 +15,19 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+
 
 :nmap <c-t> <plug>(ctrlp)
 :nmap <c-p> <plug>(ctrlp)
 :map [b :bp<cr>
 :map ]b :bn<cr>
-:nmap :BD :bn\|bd # <cr>
+command BD bp\|bd \#
 
 set nocompatible
 set t_Co=256
 set background=dark
+"colorscheme Tomorrow-Night
 "colorscheme tender
 "colorscheme deep-space
 colorscheme Tomorrow-Night
