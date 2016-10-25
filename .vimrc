@@ -50,8 +50,8 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd Filetype gitcommit match OverLength /\%51v.\+/
+autocmd Filetype gitcommit let &colorcolumn="50,70"
+set colorcolumn=80
 
 function ReplaceNERDTreeIfDirectory()
     if argc() == 1 && isdirectory(argv(0))
