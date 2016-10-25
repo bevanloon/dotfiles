@@ -14,6 +14,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+let g:airline_powerline_fonts = 1
 
 set nocompatible
 set t_Co=256
