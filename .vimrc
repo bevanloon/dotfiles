@@ -25,9 +25,11 @@ let g:airline_powerline_fonts = 1
 set nocompatible
 set t_Co=256
 set background=dark
-"colorscheme Tomorrow-Night
 "colorscheme tender
-colorscheme deep-space
+"colorscheme deep-space
+colorscheme Tomorrow-Night
+
+set relativenumber
 
 set visualbell
 
