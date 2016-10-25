@@ -9,6 +9,9 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'rakr/vim-one'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-rails'
+Plug 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
