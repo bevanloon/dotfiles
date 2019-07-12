@@ -85,17 +85,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 export PATH=/usr/local/bin:$PATH
 alias be="bundle exec"
+alias lsla="ls -la"
+alias br="bin/rails"
 
 alias govlint="bundle exec govuk-lint-ruby --diff --cached  app test lib"
 
+
 alias re_up_the_vm="vagrant up"
 alias ssh_in_to_the_vm="vagrant ssh"
+alias vm="fireitup"
 
-# Get the VM up and running 
+# Get the VM up and running
 function fireitup() {
   cd ~/govuk/govuk-puppet/development-vm
   vm_up=`vagrant status | grep 'running'`
@@ -109,3 +112,26 @@ function fireitup() {
   ssh_in_to_the_vm
   set +v
 }
+
+function bebold() {
+  cd ~/govuk/govuk-puppet/development-vm
+  vagrant ssh --command "cd /var/govuk/development && bundle exec bowl www whitehall government-frontend --without panopticon --without rummager --without rummager-publishing-listener"
+}
+
+function lab() {
+  git_branch=$(git branch | grep \* | cut -d ' ' -f2)
+  remote_url="$(git ls-remote --get-url | sed -e 's/:/\//' | sed -e 's/git@/https:\/\//' | sed -e 's/\.git//')/compare/master...$git_branch"
+  open -a /Applications/Firefox.app -g $remote_url
+}
+
+eval "$(rbenv init -)"
+
+# BASE16_SHELL=$HOME/.config/base16-shell/
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+export GOPATH=$HOME/go
+
+alias oc="sudo openconnect -v --pfs --no-dtls -u $USER https://vpn.digital.cabinet-office.gov.uk/ah"
+alias ocdr="sudo openconnect -v --pfs --no-dtls -u $USER https://vpndr.digital.cabinet-office.gov.uk/ah"
+alias fabenv="source ~/venv/fabric-scripts/bin/activate"
+export PATH="/usr/local/sbin:$PATH"
+export PATH=$PATH:~/govuk/govuk-docker/bin
