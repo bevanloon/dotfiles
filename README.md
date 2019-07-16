@@ -12,7 +12,7 @@ but there's less to remember if you simply clone this into `~/dotfiles`.
 
 ```
 git clone https://github.com/bevanloon/dotfiles ~/dotfiles
-cd dotfiles
+cd ~/dotfiles
 stow vim
 stow zsh
 stow oh-my-zsh
