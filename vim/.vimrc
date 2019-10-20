@@ -46,7 +46,7 @@ set number
 set ruler
 set list
 
-set listchars=""
+"set listchars=""
 set listchars=tab:>>
 " set listchars+=trail:•
 
