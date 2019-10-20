@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 alias be="bundle exec"
 alias fabenv="source ~/venv/fabric-scripts/bin/activate"
 
-eval "$(rbenv init -)"
-export PATH=$HOME/govuk/govuk-guix/bin:$PATH
+export PATH=$HOME/govuk/govuk-cli/bin:$HOME/govuk/gds-cli:$PATH
 export PATH=$HOME/govuk/govuk-docker/bin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
+eval "$(rbenv init -)"
