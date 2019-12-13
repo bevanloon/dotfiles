@@ -9,6 +9,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
+Plug 'haishanh/night-owl.vim'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
@@ -32,7 +33,10 @@ command BD bp\|bd \#
 
 set nocompatible
 set background=dark
-colorscheme solarized
+if (has("termguicolors"))
+  set termguicolors
+end
+colorscheme night-owl
 
 " visual bell off
 set vb t_vb=
