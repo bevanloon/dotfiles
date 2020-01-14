@@ -9,7 +9,14 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
-Plug 'haishanh/night-owl.vim'
+Plug 'flrnd/plastic.vim'
+Plug 'romainl/Apprentice'
+Plug 'cocopon/iceberg.vim'
+Plug 'LuRsT/austere.vim'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'habamax/vim-colors-lessthan'
+Plug 'Jorengarenar/vim-darkness'
+Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
@@ -31,14 +38,17 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 :map ]b :bn<cr>
 command BD bp\|bd \#
 
-set nocompatible
-set background=dark
-if (has("termguicolors"))
-  set termguicolors
-end
-colorscheme night-owl
+set termguicolors
 
-" visual bell off
+" Correct RGB escape codes for vim inside tmux
+if !has('nvim') && $TERM ==# 'screen-256color'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+set background=dark
+colorscheme hybrid
+set nocompatible
+
 set vb t_vb=
 
 set nowrap
@@ -145,3 +155,9 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,*/tmp/*
 set wildignore+=*/.git/*,*/.rbx/*,*/.hg/*,*/.svn/*,*/.DS_Store
 set wildignore+=*.swp,*~,._*
+
+" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
+for c in range(char2nr('A'), char2nr('Z'))
+  execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
+  execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
+endfor
