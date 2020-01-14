@@ -9,7 +9,13 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
-Plug 'haishanh/night-owl.vim'
+Plug 'flrnd/plastic.vim'
+Plug 'romainl/Apprentice'
+Plug 'cocopon/iceberg.vim'
+Plug 'LuRsT/austere.vim'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'habamax/vim-colors-lessthan'
+Plug 'Jorengarenar/vim-darkness'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
