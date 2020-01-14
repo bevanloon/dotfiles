@@ -16,6 +16,7 @@ Plug 'LuRsT/austere.vim'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'habamax/vim-colors-lessthan'
 Plug 'Jorengarenar/vim-darkness'
+Plug 'Vimjas/vim-python-pep8-indent'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
