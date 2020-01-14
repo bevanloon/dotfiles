@@ -37,14 +37,17 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 :map ]b :bn<cr>
 command BD bp\|bd \#
 
-set nocompatible
-set background=dark
-if (has("termguicolors"))
-  set termguicolors
-end
-colorscheme night-owl
+set termguicolors
 
-" visual bell off
+" Correct RGB escape codes for vim inside tmux
+if !has('nvim') && $TERM ==# 'screen-256color'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+set background=dark
+colorscheme hybrid
+set nocompatible
+
 set vb t_vb=
 
 set nowrap
