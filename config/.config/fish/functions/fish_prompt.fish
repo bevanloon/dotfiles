@@ -12,6 +12,12 @@ function _git_is_dirty
   echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
+function _venv
+  if test $VIRTUAL_ENV
+    echo -n -s " · (" (basename "$VIRTUAL_ENV") ")"
+  end
+end
+
 function fish_prompt
   set -l cyan (set_color cyan)
   set -l yellow (set_color yellow)
@@ -25,6 +31,8 @@ function fish_prompt
   echo -e ''
 
   echo -n -s $cwd $normal
+
+  _venv
 
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
