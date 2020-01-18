@@ -5,7 +5,14 @@
 # - Git branch and dirty state (if inside a git repo)
 
 function _git_branch_name
-  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  set -l branch_name (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  set -l commitish (command git rev-parse --short HEAD ^/dev/null)
+
+  if [ $branch_name ]
+    echo $branch_name
+  else
+    echo $commitish
+  end
 end
 
 function _git_is_dirty
