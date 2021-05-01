@@ -17,6 +17,7 @@ Plug 'owickstrom/vim-colors-paramount'
 Plug 'habamax/vim-colors-lessthan'
 Plug 'Jorengarenar/vim-darkness'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
