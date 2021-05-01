@@ -125,6 +125,18 @@ augroup NERDTreeHijackNetrw
 augroup END
 
 
+function! Topytest()
+  silent! execute "%s/self.assertEqual(actual, expected)/assert actual == expected/g"
+  silent! execute "%s/self.assertTrue(result)/assert result/g"
+  silent! execute "%s/self.assertFalse(result)/assert not result/g"
+  silent! execute "%s/unittest.TestCase//g"
+  silent! execute "g/unittest.main/d"
+  silent! execute "%s#\($\n\s*\)\+\%$##"
+  silent! execute "%s/self.assertRaises/pytest.raises/g"
+endfunction
+
+silent! map<Leader>t :call Topytest()<CR>
+
 function! NERDTreeQuit()
   redir => buffersoutput
   silent buffers
