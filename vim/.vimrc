@@ -30,6 +30,11 @@ let g:Powerline_symbols = 'fancy'
 " use Ctrl-t for Command P plugin
 :nmap <c-t> <plug>(ctrlp)
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp|vendor\$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 " use jj to esc
 :imap jj <Esc>
