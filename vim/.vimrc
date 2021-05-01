@@ -20,6 +20,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
+inoremap { {}<Left>
+inoremap ( ()<Left>
+inoremap < <><Left>
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 "let g:airline#extensions#tabline#enabled = 1
