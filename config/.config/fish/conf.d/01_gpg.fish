@@ -6,4 +6,3 @@ set -U -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh
 if not pgrep -f gpg-agent >> /dev/null
   gpg-agent --daemon
 end
-
