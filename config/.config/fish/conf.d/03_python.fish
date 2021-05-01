@@ -1,3 +1,4 @@
+abbr -a -g dj python manage.py
 set -gx VIRTUAL_ENV_DISABLE_PROMPT "TRUE"
 set -gx PATH /usr/local/opt/python/libexec/bin $PATH
 if command -v pyenv 1>/dev/null 2>&1
