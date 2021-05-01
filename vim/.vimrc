@@ -90,13 +90,12 @@ autocmd Filetype gitcommit let &colorcolumn="50,70"
 "set colorcolumn=80
 hi IncSearch ctermfg=Black  ctermbg=lightyellow cterm=bold,underline,reverse
 
-au BufRead,BufNewFile *.md setlocal textwidth=80
-au BufRead,BufNewFile *.markdown setlocal textwidth=80
-au BufRead,BufNewFile *.txt setlocal textwidth=80
+" au BufRead,BufNewFile *.md setlocal textwidth=80
+" au BufRead,BufNewFile *.markdown setlocal textwidth=80
+" au BufRead,BufNewFile *.txt setlocal textwidth=80
 au BufRead,BufNewFile *.txt setlocal wrap linebreak nolist
 au BufRead,BufNewFile *.md setlocal wrap linebreak nolist
 au BufRead,BufNewFile *.markdown setlocal wrap linebreak nolist
-au BufRead,BufNewFile *.md setlocal wrap linebreak nolist
 autocmd Filetype text let &colorcolumn=80
 
 let g:airline_mode_map = {
